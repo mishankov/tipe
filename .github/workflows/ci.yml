@@ -37,31 +37,31 @@ jobs:
     - name: Test with pytest
       run: poetry run pytest
 
-publish:
-    needs:
-    - test
-    
-    if: github.event_name == 'release' && github.event.action == 'created'
+  publish:
+      needs:
+      - test
+      
+      if: github.event_name == 'release' && github.event.action == 'created'
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        python-version: [ '3.11' ]
-        os: [ ubuntu-latest ]
+      runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          python-version: [ '3.11' ]
+          os: [ ubuntu-latest ]
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Install Poetry
-      uses: Gr1N/setup-poetry@v8
-    - run: poetry --version
+      steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: Install Poetry
+        uses: Gr1N/setup-poetry@v8
+      - run: poetry --version
 
-    - name: Setup Poetry for publish
-      run: poetry config pypi-token.pypi <token>
+      - name: Setup Poetry for publish
+        run: poetry config pypi-token.pypi <token>
 
-    - name: Publish
-      run: poetry publish
+      - name: Publish
+        run: poetry publish
