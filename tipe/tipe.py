@@ -20,9 +20,5 @@ class Pipe(Generic[ValueType]):
     def unpack(self):
         return self._value
 
-    def map(self, function: Callable[[int], FunctionReturnType]):
-        if isinstance(self._value, Iterable):
-            return Pipe(map(function, self._value))
-
 
 P = Pipe
