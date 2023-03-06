@@ -1,6 +1,6 @@
 # Tipe - typed pipe
 
-Tipe allows you to create constructions similar to (pipe opearator)[https://elixirschool.com/en/lessons/basics/pipe_operator], where result of a function used as an input of next function
+Tipe allows you to create constructions similar to [pipe operator](https://elixirschool.com/en/lessons/basics/pipe_operator), where result of a function used as an input of next function
 
 
 ## Examples
@@ -42,7 +42,7 @@ Pass function to execute on `Pipe` value. Wraps function result in `Pipe` and re
 
 ### `Pipe.check()`
 
-Like `Pipe.pipe()` but does not change value inside `Pipe`. May be useful for debuging purposes
+Like `Pipe.pipe()` but does not change the value inside `Pipe`. May be useful for debugging purposes
 
 ```python
 >>> Pipe(2).pipe(lambda x: x ** x).check(print).pipe(float).unwrap()
@@ -57,7 +57,7 @@ Returns value from `Pipe`
 
 ### Short forms
 
-For convinience you can use `P` as short version of `Pipe` and short versions uf methods:
+For convenience you can use `P` as short version of `Pipe` and short versions of the methods:
 - `p`: `pipe`
 - `c`: `check`
 - `u`: `unwrap`
