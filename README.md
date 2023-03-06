@@ -10,7 +10,11 @@ Tipe allows you to create constructions similar to [pipe operator](https://elixi
 >>> 
 >>> Pipe(2).pipe(lambda x: x + 1).pipe(float).unwrap()
 3.0
->>> Pipe([2, 3, 4]).pipe(len).pipe(lambda x: x + 1).pipe(float).unwrap()
+>>> Pipe([2, 3, 4]) \
+...         .pipe(len) \
+...         .pipe(lambda x: x + 1) \
+...         .pipe(float) \
+...         .unwrap()
 4.0
 ```
 
