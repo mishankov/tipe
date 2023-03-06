@@ -1,6 +1,14 @@
+[![PyPI](https://img.shields.io/pypi/v/tipe)](https://pypi.org/project/tipe/)
+
 # Tipe - typed pipe
 
 Tipe allows you to create constructions similar to [pipe operator](https://elixirschool.com/en/lessons/basics/pipe_operator), where result of a function used as an input of next function
+
+## Instalation
+
+```bash
+pip install tipe
+```
 
 
 ## Examples
