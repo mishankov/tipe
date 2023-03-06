@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "tipe"
-version = "0.1.4"
-description = ""
 authors = ["Denis Mishankov <mishankov@mail.com>"]
+description = "Typed pipe"
+name = "tipe"
 readme = "README.md"
+version = "1.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -15,5 +15,5 @@ pytest = "^7.2.1"
 black = ">=22.12,<24.0"
 
 [build-system]
-requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
