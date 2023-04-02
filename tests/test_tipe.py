@@ -6,4 +6,4 @@ def test_simple():
 
 
 def test_not_that_simple():
-    assert Pipe([2, 3, 4]).pipe(len).pipe(lambda x: x + 1).pipe(float).unwrap() == 3.0
+    assert Pipe([2, 3, 4]).pipe(len).pipe(lambda x: x + 1).pipe(float).unwrap() == 4.0
