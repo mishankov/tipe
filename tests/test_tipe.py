@@ -17,3 +17,14 @@ def test_generator():
         .unwrap()
         == 289
     )
+
+a = ~(Pipe([5, 5, 5]) >> (lambda x: len(x)))
+
+def test_rshift():
+    assert ~(Pipe([5, 5, 5]) >> len) == 3
+
+def test_rshift_lambda():
+    a = Pipe([2, 3, 4]).pipe(len).pipe(lambda x: x + 1).unwrap()
+    b = ~(Pipe([2, 3, 4]) >> len >> (lambda x: x + 1))
+
+    assert a == b == 4

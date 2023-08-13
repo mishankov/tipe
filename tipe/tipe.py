@@ -1,5 +1,6 @@
 from typing import TypeVar, Callable, Generic
 
+
 ValueType = TypeVar("ValueType")
 FunctionReturnType = TypeVar("FunctionReturnType")
 
@@ -28,6 +29,15 @@ class Pipe(Generic[ValueType]):
 
     def __repr__(self) -> str:
         return f"Pipe({self._value})"
+
+    def __rshift__(
+        self, function: Callable[[ValueType], FunctionReturnType]
+    ) -> "Pipe[FunctionReturnType]":
+        result: FunctionReturnType = function(self._value)
+        return Pipe(result)
+    
+    def __invert__(self) -> ValueType:
+        return self.unwrap()
 
 
 P = Pipe
