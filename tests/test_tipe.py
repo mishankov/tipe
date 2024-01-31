@@ -11,9 +11,6 @@ def test_not_that_simple():
 
 def test_generator():
     assert (
-        Pipe((i**i for i in range(5)))
-        .pipe(lambda x: (y for y in x))
-        .pipe(sum)
-        .unwrap()
+        Pipe((i**i for i in range(5))).pipe(lambda x: (y for y in x)).pipe(sum).unwrap()
         == 289
     )
