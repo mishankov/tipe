@@ -11,12 +11,21 @@ class Pipe(Generic[ValueType]):
         self.c = self.check
         self.u = self.unwrap
 
-    def pipe(self, function: Callable[[ValueType], FunctionReturnType]):
-        result: FunctionReturnType = function(self._value)
+    def pipe(
+        self,
+        function: Callable[[ValueType], FunctionReturnType],
+        *additional_params: list,
+    ):
+        result = function(self._value, *additional_params)
+
         return Pipe(result)
 
-    def check(self, function: Callable[[ValueType], FunctionReturnType]):
-        function(self._value)
+    def check(
+        self,
+        function: Callable[[ValueType], FunctionReturnType],
+        *additional_params: list,
+    ):
+        function(self._value, *additional_params)
         return Pipe(self._value)
 
     def unwrap(self):
