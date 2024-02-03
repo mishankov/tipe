@@ -8,7 +8,7 @@ class Pipe(Generic[ValueType]):
     def __init__(self, initial_value: ValueType) -> None:
         """
         Initializes the object with the initial value and sets up aliases for pipe, check, and unwrap functions.
-        
+
         :param initial_value: The initial value to be assigned to the object.
         :type initial_value: ValueType
         :return: None
@@ -44,11 +44,11 @@ class Pipe(Generic[ValueType]):
     ):
         """
         Apply the given function to the current value and return the result as a new Pipe.
-        
+
         Args:
             function: The function to apply to the current value.
             *additional_params: Additional parameters to pass to the function.
-        
+
         Returns:
             Pipe: A new Pipe containing the result of applying the function to the current value.
         """
