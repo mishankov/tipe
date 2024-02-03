@@ -21,3 +21,4 @@ def test_additional_params():
         return a + b
 
     assert Pipe(1).pipe(add, 2).unwrap() == 3
+    assert Pipe(2).pipe(range, 4).pipe(len).unwrap() == 2
