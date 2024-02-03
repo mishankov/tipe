@@ -14,3 +14,11 @@ def test_generator():
         Pipe((i**i for i in range(5))).pipe(lambda x: (y for y in x)).pipe(sum).unwrap()
         == 289
     )
+
+
+def test_additional_params():
+    def add(a: int, b: int) -> int:
+        return a + b
+
+    assert Pipe(1).pipe(add, 2).unwrap() == 3
+    assert Pipe(2).pipe(range, 4).pipe(len).unwrap() == 2

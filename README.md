@@ -24,6 +24,8 @@ pip install tipe
 ...         .pipe(float) \
 ...         .unwrap()
 4.0
+>>> Pipe(2).pipe(range, 4).pipe(len).unwrap()
+2
 ```
 
 Equivalent for examples above would be
@@ -33,6 +35,8 @@ Equivalent for examples above would be
 3.0
 >>> float(len([2, 3, 4]) + 1)
 4.0
+>>> len(range(2, 4))
+2
 ```
 
 
@@ -49,7 +53,7 @@ Pipe(2)
 
 ### `Pipe.pipe()`
 
-Pass function to execute on `Pipe` value. Wraps function result in `Pipe` and returns it
+Pass function to execute on `Pipe` value and additional params for it. Wraps function result in `Pipe` and returns it
 
 
 ### `Pipe.check()`
