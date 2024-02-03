@@ -3,7 +3,7 @@ authors = ["Denis Mishankov <mishankov@mail.com>"]
 description = "Typed pipe"
 name = "tipe"
 readme = "README.md"
-version = "1.0.0"
+version = "1.1.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
